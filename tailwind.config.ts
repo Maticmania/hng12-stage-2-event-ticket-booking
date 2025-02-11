@@ -9,8 +9,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "rgba(4, 30, 35, 1)",
+        foreground: "rgba(8, 37, 43, 1)",
+        primary: "rgba(36, 160, 181, 1)",
+        secondary: "rgba(14, 70, 79, 1)",
+        tertiary: "rgba(4, 30, 35, 1)",
+        fade: "rgba(179, 179, 179, 1)",
+        black: "rgba(10, 12, 17, 1)",
+        grey: 'rgba(250, 250, 250, 1)'
+      },
+      fontFamily: {
+        jeju: ["var(--font-myeongjo)"],
+        roboto: ["var(--font-roboto)"],
+        roadrage: ["var(--font-road-rage)"],
       },
     },
   },
