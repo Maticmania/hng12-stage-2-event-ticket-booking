@@ -10,7 +10,7 @@ const TickectTypes = () => {
             <p className="uppercase">Regular Access</p>
             <p>20 left!</p>
           </div>
-          <button className="bg-foreground font-roboto font-semibold text-right pl-6 pr-2 rounded-lg border-primary border py-2">
+          <button className="bg-secondary font-roboto font-semibold text-right pl-6 pr-2 rounded-lg border-primary border py-2">
             Free
           </button>
         </div>
@@ -19,7 +19,7 @@ const TickectTypes = () => {
             <p className="uppercase">VIP Access </p>
             <p>20 left!</p>
           </div>
-          <button className="bg-foreground font-roboto font-semibold text-right pl-6 pr-2 rounded-lg border-primary border py-2">
+          <button className="bg-secondary font-roboto font-semibold text-right pl-6 pr-2 rounded-lg border-primary border py-2">
             $50
           </button>
         </div>
@@ -28,7 +28,7 @@ const TickectTypes = () => {
             <p className="uppercase">VVIP Access </p>
             <p>20 left!</p>
           </div>
-          <button className="bg-foreground font-roboto font-semibold text-right pl-6 pr-2 rounded-lg border-primary border py-2">
+          <button className="bg-secondary font-roboto font-semibold text-right pl-6 pr-2 rounded-lg border-primary border py-2">
             $150
           </button>
         </div>
