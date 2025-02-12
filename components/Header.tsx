@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { FaArrowRightLong } from "react-icons/fa6";
 const Header = () => {
   return (
-    <div className='fixed top-6 max-w-[1200px] w-full h-[76px] bg-foreground text-white border-secondary border rounded-3xl flex items-center justify-between px-4 z-10 '>
+    <div className='fixed top-6 md:max-w-[1200px] w-full h-[76px] bg-foreground text-white border-secondary border rounded-3xl flex items-center justify-between px-4 z-10 '>
       <Image src={logo} alt='ticket' width={91} height={36} />
       <ul className='hidden justify-center items-center gap-4 font-jeju md:flex'>
         <li className='p-[10px] text-lg text-white cursor-pointer'>Events</li>
@@ -16,7 +16,6 @@ const Header = () => {
         MY TICKETS
         <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-2" />
         </button>
-
     </div>
   )
 }
