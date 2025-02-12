@@ -59,7 +59,11 @@ export default function UploadProfile({
   );
 
   return (
-    <div className={`p-6 rounded-3xl bg-[#052228] max-h-[344px] border-secondary border ${className || ""}`}>
+    <div
+      className={`p-6 rounded-3xl bg-[#052228] max-h-[344px] border-secondary border ${
+        className || ""
+      }`}
+    >
       <h2 className="text-normal font-roboto text-grey mb-6">
         Upload Profile Photo
       </h2>
@@ -92,8 +96,11 @@ export default function UploadProfile({
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                  <div className="bg-white/10 p-3 rounded-full backdrop-blur-sm">
-                    <FaCamera className="w-6 h-6 text-white" />
+                  <div className=" flex flex-col justify-center items-center">
+                    <FaCloudUploadAlt className="w-8 h-8 text-white mb-2" />
+                    <p className="text-white text-center">
+                      Drag & drop or click to upload
+                    </p>
                   </div>
                 </div>
               </div>
