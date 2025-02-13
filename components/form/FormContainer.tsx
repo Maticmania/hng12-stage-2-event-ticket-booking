@@ -10,20 +10,18 @@ type FormData = {
 
 // Define the form steps type
 interface setStepProps {
-setStep: (step: number) => void
+  setStep: (step: number) => void;
 }
 
-const FormContainer = ({setStep}:setStepProps) => {
+const FormContainer = ({ setStep }: setStepProps) => {
   const {
     register,
     formState: { errors },
     setValue, // You can use this to update form values programmatically
-  } = useFormContext<FormData>(); 
-
+  } = useFormContext<FormData>();
 
   return (
     <section className="space-y-4">
-      
       {/* Name Field */}
       <div className="flex flex-col gap-2">
         <label className="font-roboto text-grey">Enter your name</label>
@@ -33,7 +31,9 @@ const FormContainer = ({setStep}:setStepProps) => {
           className="rounded-xl border border-secondary bg-transparent h-[48px] outline-none focus:ring ring-primary px-4 text-grey"
           aria-invalid={errors.name ? "true" : "false"}
         />
-        {errors.name?.message && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+        {errors.name?.message && (
+          <p className="text-red-500 text-sm">{errors.name.message}</p>
+        )}
       </div>
 
       {/* Email Field */}
@@ -41,17 +41,19 @@ const FormContainer = ({setStep}:setStepProps) => {
         <label className="font-roboto text-grey">Enter your email *</label>
         <input
           type="email"
-          {...register("email", { 
-            required: "Email is required", 
+          {...register("email", {
+            required: "Email is required",
             pattern: {
               value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: "Enter a valid email address"
-            }
+              message: "Enter a valid email address",
+            },
           })}
           className="rounded-xl border border-secondary bg-transparent h-[48px] outline-none focus:ring ring-primary px-4 text-grey"
           aria-invalid={errors.email ? "true" : "false"}
         />
-        {errors.email?.message && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+        {errors.email?.message && (
+          <p className="text-red-500 text-sm">{errors.email.message}</p>
+        )}
       </div>
 
       {/* Project Description */}
@@ -62,20 +64,27 @@ const FormContainer = ({setStep}:setStepProps) => {
           {...register("project", { required: "Project details are required" })}
           className="rounded-xl border border-secondary bg-transparent min-h-[127px] max-h-[130px] outline-none focus:ring ring-primary p-4 text-grey"
         />
-        {errors.project?.message && <p className="text-red-500 text-sm">{errors.project.message}</p>}
+        {errors.project?.message && (
+          <p className="text-red-500 text-sm">{errors.project.message}</p>
+        )}
       </div>
 
       {/* Buttons */}
       <div className="w-full flex justify-between gap-5 font-jeju">
-        <button type="button" className="p-3 w-full bg-transparent border border-secondary rounded-md text-primary hover:border-primary"   onClick={() => setStep(1)}
+        <button
+          type="button"
+          className="p-3 w-full bg-transparent border border-secondary rounded-md text-primary hover:border-primary"
+          onClick={() => setStep(1)}
         >
           Back
         </button>
-        <button type="submit" className="p-3 w-full bg-primary border border-secondary rounded-md text-grey hover:border-primary">
+        <button
+          type="submit"
+          className="p-3 w-full bg-primary border border-secondary rounded-md text-grey hover:border-primary"
+        >
           Get My Ticket
         </button>
       </div>
-
     </section>
   );
 };

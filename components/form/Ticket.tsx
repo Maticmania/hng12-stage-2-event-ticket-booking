@@ -3,6 +3,7 @@ import ticketbg from "@/public/assets/images/Ticket.svg";
 import reg from "@/public/assets/icons/reg.svg";
 import QRCode from "react-qr-code";
 import Image from "next/image";
+import { useFormContext } from "react-hook-form"
 
 interface TicketProps {
   ticketNumber?: string;
@@ -11,8 +12,10 @@ interface TicketProps {
 
 export default function Ticket({
   ticketNumber = "12345",
-  name = "John Doe",
 }: TicketProps) {
+
+      const { getValues } = useFormContext()
+      const { name, ticketCount, ticketType , profilePhoto } = getValues()
   return (
     <div className="w-full my-5 relative">
       <Image src={ticketbg} alt="your ticket" className="w-full relative" />
@@ -47,7 +50,7 @@ export default function Ticket({
           </div>
         </div>
         <p className="text-secondary h-[10%] px-5 font-[900] font-roboto hidden lg:flex justify-start items-start ">
-          Ticket for 1 entry only
+          Ticket for {ticketCount} entry only
         </p>
       </div>
       <div className="absolute top-0 right-0 h-full w-[16%] flex flex-col items-start text-white font-bold py-5 -rotate-90 translate-x-[60%] -translate-y-5 md:translate-y-0  whitespace-nowrap">

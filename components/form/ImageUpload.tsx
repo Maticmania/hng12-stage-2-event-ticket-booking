@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { FaCloudUploadAlt, FaCamera } from "react-icons/fa";
+import { FaCloudUploadAlt } from "react-icons/fa";
 import type React from "react";
 
 interface UploadProfileProps {
@@ -86,7 +86,6 @@ export default function UploadProfile({
             accept="image/*"
             onChange={handleFileSelect}
           />
-
           {preview ? (
             <>
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
