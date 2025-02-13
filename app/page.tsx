@@ -9,6 +9,7 @@ import Image from "next/image";
 import ticketbg from "@/public/assets/images/Ticket.svg";
 import reg from "@/public/assets/icons/reg.svg";
 import Ticket from "@/components/form/Ticket";
+import TicketTypes from "@/components/form/TickectTypes";
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
             </p>
           </div>{" "}
           <span className="w-full bg-secondary h-1 flex"></span>
-          <div className="text-grey">
+          {/* <div className="text-grey">
             <p className="font-roboto">Select Ticket Type:</p>
             <div className="min-h-[186px] bg-[#052228] w-full rounded-[14px] border-secondary border p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-primary rounded-lg h-[65px] border-secondary border p-2 flex justify-between items-start cursor-pointer">
@@ -71,7 +72,8 @@ export default function Home() {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
+          <TicketTypes />
           <div className="text-grey">
             <p className="font-roboto">Number of Tickets</p>
             <select
