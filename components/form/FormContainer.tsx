@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 // Define the form fields type
 type FormData = {
@@ -10,16 +11,13 @@ type FormData = {
 const FormContainer = () => {
   const {
     register,
-    handleSubmit,
     formState: { errors },
-  } = useForm<FormData>(); // Pass the type
+    setValue, // You can use this to update form values programmatically
+  } = useFormContext<FormData>(); 
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form Submitted:", data);
-  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <section className="space-y-4">
       
       {/* Name Field */}
       <div className="flex flex-col gap-2">
@@ -72,7 +70,7 @@ const FormContainer = () => {
         </button>
       </div>
 
-    </form>
+    </section>
   );
 };
 
