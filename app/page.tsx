@@ -118,7 +118,7 @@ export default function Home() {
         <div className="border-secondary border w-full h-auto bg-foreground rounded-[32px] p-6 mt-6 space-y-8">
           <UploadProfile />
           <span className="w-full bg-secondary h-1 flex"></span>
-          <form action="" className="space-y-4">
+          {/* <form action="" className="space-y-4">
             <div className="flex flex-col gap-2">
               <label className="font-roboto text-grey">Enter your name</label>
               <input
@@ -152,7 +152,8 @@ export default function Home() {
                 Get My Ticket
               </button>
             </div>
-          </form>
+          </form> */}
+          <FormContainer />
         </div>
       </section>
 
