@@ -6,12 +6,12 @@ import Image from "next/image";
 
 interface TicketProps {
   ticketNumber?: string;
-  userName?: string;
+  name?: string;
 }
 
 export default function Ticket({
   ticketNumber = "12345",
-  userName = "John Doe",
+  name = "John Doe",
 }: TicketProps) {
   return (
     <div className="w-full my-5 relative">
@@ -61,7 +61,7 @@ export default function Ticket({
           March 15, 2025 | 7:00 PM
         </span>
         <span className="font-roboto text-[11px] font-semibold hidden md:flex">
-          User Name: John Doe
+          User Name: {name}
         </span>
       </div>
       <Image

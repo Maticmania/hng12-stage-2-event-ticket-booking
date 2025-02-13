@@ -19,7 +19,7 @@ interface AttendeeDetailsProps {
     <div className="border-secondary border w-full h-auto bg-foreground rounded-[32px] p-6 mt-6 space-y-8">
       <UploadProfile onUpload={handleProfileUpload} />
       <span className="w-full bg-secondary h-1 flex"></span>
-      <FormContainer />
+      <FormContainer setStep={setStep} />
     </div>
   );
 };

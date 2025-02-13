@@ -8,7 +8,12 @@ type FormData = {
   project: string;
 };
 
-const FormContainer = () => {
+// Define the form steps type
+interface setStepProps {
+setStep: (step: number) => void
+}
+
+const FormContainer = ({setStep}:setStepProps) => {
   const {
     register,
     formState: { errors },
@@ -62,7 +67,8 @@ const FormContainer = () => {
 
       {/* Buttons */}
       <div className="w-full flex justify-between gap-5 font-jeju">
-        <button type="button" className="p-3 w-full bg-transparent border border-secondary rounded-md text-primary hover:border-primary">
+        <button type="button" className="p-3 w-full bg-transparent border border-secondary rounded-md text-primary hover:border-primary"   onClick={() => setStep(1)}
+        >
           Back
         </button>
         <button type="submit" className="p-3 w-full bg-primary border border-secondary rounded-md text-grey hover:border-primary">
