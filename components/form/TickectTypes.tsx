@@ -5,6 +5,7 @@ const TickectTypes = () => {
     <div className="text-grey">
       <p className="font-roboto">Select Ticket Type:</p>
       <div className="min-h-[186px] bg-[#052228] w-full rounded-[14px] border-secondary border p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* selected by default */}
         <div className="bg-primary rounded-lg h-[65px] border-secondary border p-2 flex justify-between items-start cursor-pointer">
           <div className="font-normal text-base font-roboto text-grey">
             <p className="uppercase">Regular Access</p>
@@ -14,7 +15,9 @@ const TickectTypes = () => {
             Free
           </button>
         </div>
-        <div className="rounded-lg h-[65px] bg-transparent border border-secondary  p-2 flex justify-between items-start cursor-pointer">
+        {/* selected */}
+
+        <div className="rounded-lg h-[65px] bg-transparent border border-secondary  p-2 flex justify-between items-start cursor-pointer hover:bg-primary">
           <div className="font-normal text-base font-roboto text-grey">
             <p className="uppercase">VIP Access </p>
             <p>20 left!</p>

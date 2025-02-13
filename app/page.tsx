@@ -52,7 +52,7 @@ export default function Home() {
                   Free
                 </button>
               </div>
-              <div className="rounded-lg h-[65px] bg-transparent border border-secondary  p-2 flex justify-between items-start cursor-pointer">
+              <div className="rounded-lg h-[65px] bg-transparent border border-secondary  p-2 flex justify-between items-start cursor-pointer hover:bg-primary transition-all duration-300">
                 <div className="font-normal text-base font-roboto text-grey">
                   <p className="uppercase">VIP Access </p>
                   <p>20 left!</p>
@@ -61,7 +61,7 @@ export default function Home() {
                   $50
                 </button>
               </div>
-              <div className="rounded-lg h-[65px] bg-transparent border border-secondary  p-2 flex justify-between items-start cursor-pointer">
+              <div className="rounded-lg h-[65px] bg-transparent border border-secondary  p-2 flex justify-between items-start cursor-pointer hover:bg-primary transition-all duration-300">
                 <div className="font-normal text-base font-roboto text-grey">
                   <p className="uppercase">VVIP Access </p>
                   <p>20 left!</p>
