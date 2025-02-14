@@ -1,18 +1,9 @@
 import React from "react";
-import Ticket from "../form/Ticket";
-import { useFormContext } from "react-hook-form"
 import NewTicket from "../form/NewTicket";
-import { redirect } from "next/navigation";
 
-interface TicketConfirmationProps {
-    setStep: (step: number) => void;
-  }
-  
 
-  
-  const TicketConfirmation: React.FC<TicketConfirmationProps> = ({ setStep }) => {
-    const { getValues } = useFormContext()
-    const { name, ticketCount, ticketType , profilePhoto } = getValues()
+const TicketConfirmation = () => {
+
   return (
     <div className="grid gap-y-8">
       <div className="space-y-4 text-left md:text-center text-grey mt-10">
@@ -27,10 +18,16 @@ interface TicketConfirmationProps {
       {/* <Ticket ticketNumber="12345" name={name} /> */}
       <NewTicket ticketNumber="12345" />
       <div className="md:bg-tertiary md:border-secondary md:border rounded-full flex flex-col md:flex-row md:justify-around  font-jeju gap-4">
-        <button className="p-3 min-w-[35%] bg-transparent border border-secondary rounded-md text-primary hover:border-primary font-jeju" >
+        <button className="p-3 min-w-[35%] bg-transparent border border-secondary rounded-md text-primary hover:border-primary font-jeju">
           Download Ticket
-        </button>       
-        
+        </button>
+        <button
+          className="p-3 min-w-[35%] border border-secondary rounded-md text-grey bg-primary  hover:font-bold capitalize"
+          type="button"
+          onClick={() => (window.location.href = '/')}
+          >
+          Book Another Ticket
+        </button>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ interface TicketCountProps {
 const TicketCount: React.FC<TicketCountProps> = ({ register }) => {
   return (
     <div className="text-grey">
-      <p className="font-roboto">Number of Tickets</p>
+      <p className="font-roboto pb-1">Number of Tickets</p>
       <select
         {...register("ticketCount")} // Register with react-hook-form
         className="w-full bg-transparent border-secondary border p-4 rounded-xl"
