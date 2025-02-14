@@ -3,13 +3,21 @@
 import { useState, useCallback } from "react";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import type React from "react";
+import { useFormContext } from "react-hook-form";
 
-interface UploadProfileProps {
-  onUpload?: (url: string) => void;
-  className?: string;
-}
+// interface UploadProfileProps {
+//   onUpload?: (url: string) => void;
+//   className?: string;
+// }
 
-export default function UploadProfile({ onUpload, className }: UploadProfileProps) {
+export default function UploadProfile() {
+    const {
+      setValue,
+    } = useFormContext();
+  
+    const onUpload = (file: File) => {
+      setValue("profilePhoto", file);
+    };
   const [isDragging, setIsDragging] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
@@ -81,7 +89,7 @@ export default function UploadProfile({ onUpload, className }: UploadProfileProp
 
   return (
     <div
-      className={`p-6 rounded-3xl bg-[#052228] max-h-[344px] border-secondary border ${className || ""}`}
+      className={`p-6 rounded-3xl bg-[#052228] max-h-[344px] border-secondary border `}
     >
       <h2 className="text-normal font-roboto text-grey mb-6">Upload Profile Photo</h2>
       <div className="bg-background w-full h-auto flex justify-center">

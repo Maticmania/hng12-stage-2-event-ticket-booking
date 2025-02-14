@@ -14,7 +14,7 @@ import noImage from "@/public/assets/images/noimage.jpg";
     name: string;
     email: string;
     project: string;
-    profilePhoto?: File | null;
+    profilePhoto?: String;
   };
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       name: "",
       email: "",
       project: "",
-      profilePhoto: noImage,
+      profilePhoto: "",
     },
   });
 
