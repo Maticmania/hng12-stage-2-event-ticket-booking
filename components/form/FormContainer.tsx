@@ -70,7 +70,7 @@ const FormContainer = ({ setStep }: setStepProps) => {
       </div>
 
       {/* Buttons */}
-      <div className="w-full flex justify-between gap-5 font-jeju">
+      <div className="w-full flex justify-between flex-col md:flex-row gap-5 font-jeju">
         <button
           type="button"
           className="p-3 w-full bg-transparent border border-secondary rounded-md text-primary hover:border-primary"
