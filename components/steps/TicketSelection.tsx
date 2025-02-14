@@ -27,7 +27,7 @@ const TicketSelection = ({ setStep }: TicketSelectionProps) => {
       </div>
       <span className="w-full bg-secondary h-1 flex"></span>
       <TicketTypes register={register} />
-      <TicketCount register={register} />
+      <TicketCount  />
       <div className="md:bg-tertiary md:border-secondary md:border rounded-full flex flex-col md:flex-row md:justify-around  font-jeju gap-4">
         <button
           onClick={() => setStep(1)}

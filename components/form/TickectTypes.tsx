@@ -22,7 +22,7 @@ const TicketTypes: React.FC<TicketTypesProps> = ({ register }) => {
         {/* Regular Access */}
         <div
           className={`rounded-lg  border border-secondary p-2 flex justify-between items-start cursor-pointer transition-all duration-300 
-          ${selectedTicket === "Regular Access" ? "bg-primary" : "bg-transparent hover:bg-primary"}`}
+          ${selectedTicket === "Regular Access" ? "bg-[#12464E]" : "bg-transparent hover:bg-[#12464E]"}`}
           onClick={() => handleSelect("Regular Access")}
         >
           <div className="font-normal text-base font-roboto text-grey">
@@ -37,7 +37,7 @@ const TicketTypes: React.FC<TicketTypesProps> = ({ register }) => {
         {/* VIP Access */}
         <div
           className={`rounded-lg  border border-secondary p-2 flex justify-between items-start cursor-pointer transition-all duration-300 
-          ${selectedTicket === "VIP Access" ? "bg-primary" : "bg-transparent hover:bg-primary"}`}
+          ${selectedTicket === "VIP Access" ? "bg-[#12464E]" : "bg-transparent hover:bg-[#12464E]"}`}
           onClick={() => handleSelect("VIP Access")}
         >
           <div className="font-normal text-base font-roboto text-grey">
@@ -51,7 +51,7 @@ const TicketTypes: React.FC<TicketTypesProps> = ({ register }) => {
         {/* VVIP Access */}
         <div
           className={`rounded-lg  border border-secondary p-2 flex justify-between items-start cursor-pointer transition-all duration-300 
-          ${selectedTicket === "VVIP Access" ? "bg-primary" : "bg-transparent hover:bg-primary"}`}
+          ${selectedTicket === "VVIP Access" ? "bg-[#12464E]" : "bg-transparent hover:bg-[#12464E]"}`}
           onClick={() => handleSelect("VVIP Access")}
         >
           <div className="font-normal text-base font-roboto text-grey">

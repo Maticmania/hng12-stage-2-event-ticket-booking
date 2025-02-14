@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
-import html2canvas from "html2canvas";
 import { useFormContext } from "react-hook-form";
 import barcode from "@/public/assets/images/Bar Code.svg";
 import noImage from "@/public/assets/images/noimage.jpg";
