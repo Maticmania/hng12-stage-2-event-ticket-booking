@@ -6,6 +6,7 @@ import TicketSelection from "@/components/steps/TicketSelection";
 import AttendeeDetails from "@/components/steps/AttendeeDetails";
 import TicketConfirmation from "@/components/steps/TicketConfirmation";
 import Progressive from "@/components/Progressive";
+import noImage from "@/public/assets/images/noimage.jpg";
 
   type FormData = {
     ticketType: string;
@@ -25,7 +26,7 @@ export default function Home() {
       name: "",
       email: "",
       project: "",
-      profilePhoto: null,
+      profilePhoto: noImage,
     },
   });
 

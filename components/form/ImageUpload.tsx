@@ -25,7 +25,7 @@ export default function UploadProfile({ onUpload, className }: UploadProfileProp
   }, []);
 
   const uploadImage = async (file: File) => {
-    const apiKey = process.env.API_KEY 
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY
     const formData = new FormData();
     formData.append("image", file);
 
