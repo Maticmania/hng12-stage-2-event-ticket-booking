@@ -96,8 +96,6 @@ export default function NewTicket({ ticketNumber = "234567",ticketRef }: TicketP
               <Image
                 src={barcode}
                 alt="Barcode"
-                width={192}
-                height={48}
                 className="object-contain"
               />
             </div>
