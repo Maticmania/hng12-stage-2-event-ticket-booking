@@ -5,16 +5,14 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import type React from "react";
 
 interface UploadProfileProps {
-  onUpload?: (file: File) => void;
+  onUpload?: (url: string) => void;
   className?: string;
 }
 
-export default function UploadProfile({
-  onUpload,
-  className,
-}: UploadProfileProps) {
+export default function UploadProfile({ onUpload, className }: UploadProfileProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -26,15 +24,38 @@ export default function UploadProfile({
     setIsDragging(false);
   }, []);
 
+  const uploadImage = async (file: File) => {
+    const apiKey = process.env.API_KEY 
+    const formData = new FormData();
+    formData.append("image", file);
+
+    setUploading(true);
+    try {
+      const response = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        const imageUrl = result.data.url;
+        setPreview(imageUrl);
+        onUpload?.(imageUrl);
+      } else {
+        console.error("Upload failed:", result);
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleFile = useCallback(
     (file: File) => {
       if (file && file.type.startsWith("image/")) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          setPreview(reader.result as string);
-        };
-        reader.readAsDataURL(file);
-        onUpload?.(file);
+        setPreview(URL.createObjectURL(file));
+        uploadImage(file);
       }
     },
     [onUpload]
@@ -60,13 +81,9 @@ export default function UploadProfile({
 
   return (
     <div
-      className={`p-6 rounded-3xl bg-[#052228] max-h-[344px] border-secondary border ${
-        className || ""
-      }`}
+      className={`p-6 rounded-3xl bg-[#052228] max-h-[344px] border-secondary border ${className || ""}`}
     >
-      <h2 className="text-normal font-roboto text-grey mb-6">
-        Upload Profile Photo
-      </h2>
+      <h2 className="text-normal font-roboto text-grey mb-6">Upload Profile Photo</h2>
       <div className="bg-background w-full h-auto flex justify-center">
         <label
           onDragOver={handleDragOver}
@@ -80,25 +97,17 @@ export default function UploadProfile({
           group
         `}
         >
-          <input
-            type="file"
-            className="sr-only"
-            accept="image/*"
-            onChange={handleFileSelect}
-          />
+          <input type="file" className="sr-only" accept="image/*" onChange={handleFileSelect} />
+
           {preview ? (
             <>
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                <img
-                  src={preview || "/placeholder.svg"}
-                  alt="Profile preview"
-                  className="w-full h-full object-cover"
-                />
+                <img src={preview} alt="Profile preview" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                  <div className=" flex flex-col justify-center items-center">
+                  <div className="flex flex-col justify-center items-center">
                     <FaCloudUploadAlt className="w-8 h-8 text-white mb-2" />
                     <p className="text-white text-center">
-                      Drag & drop or click to upload
+                      {uploading ? "Uploading..." : "Drag & drop or click to upload"}
                     </p>
                   </div>
                 </div>
@@ -108,7 +117,7 @@ export default function UploadProfile({
             <>
               <FaCloudUploadAlt className="w-8 h-8 text-white mb-2" />
               <p className="text-white text-center">
-                Drag & drop or click to upload
+                {uploading ? "Uploading..." : "Drag & drop or click to upload"}
               </p>
             </>
           )}

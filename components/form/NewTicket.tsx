@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useFormContext } from "react-hook-form";
 import barcode from '@/public/assets/images/Bar Code.svg'
+import noImage from '@/public/assets/images/noimage.jpg'
 
 interface TicketProps {
   ticketNumber?: string;
@@ -42,7 +43,7 @@ export default function NewTicket({ ticketNumber = "234567" }: TicketProps) {
             <div className="w-[140px] h-[140px] mx-auto overflow-hidden rounded-lg bg-[#1A3A40] border-2 border-primary">
               {profilePhoto ? (
                 <Image
-                  src={profilePhoto || "/placeholder.svg"}
+                  src={profilePhoto || noImage }
                   alt="Profile"
                   width={140}
                   height={140}

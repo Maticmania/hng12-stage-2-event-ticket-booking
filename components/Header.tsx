@@ -12,7 +12,7 @@ const Header = () => {
         <li className='p-[10px] text-lg text-fade hover:text-white transition-colors duration-300 capitalize '>About</li>
         <li className='p-[10px] text-lg text-fade hover:text-white transition-colors duration-300 capitalize '>Project</li>
       </ul>
-      <button type="button" className="bg-white text-black font-jeju py-4 px-6 rounded-xl border border-[#D5EA001A]/10 flex items-center gap-x-4 group transition-all duration-200">
+      <button type="button" className="bg-white text-black font-jeju py-4 px-6 rounded-xl border border-[#D5EA001A]/10 flex items-center gap-x-4 group transition-all duration-200 hover:bg-primary">
         MY TICKETS
         <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-2" />
         </button>

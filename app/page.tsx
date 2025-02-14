@@ -49,7 +49,7 @@ export default function Home() {
           <Progressive step={step} />
           {step === 1 && <TicketSelection setStep={setStep} />}
           {step === 2 && <AttendeeDetails setStep={setStep} />}
-          {step === 3 && <TicketConfirmation setStep={setStep} />}
+          {step === 3 && <TicketConfirmation  />}
         </form>
       </FormProvider>
     </div>
